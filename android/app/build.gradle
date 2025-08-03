@@ -113,7 +113,16 @@ dependencies {
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
+        
+         // Firebase BoM for version management
+        implementation platform("com.google.firebase:firebase-bom:32.7.1")
+
+         // Firebase Messaging (no version needed)
+         implementation "com.google.firebase:firebase-messaging"
     } else {
         implementation jscFlavor
     }
 }
+
+
+apply plugin: "com.google.gms.google-services"
